@@ -58,6 +58,11 @@ input[type=text]{
     background-color: #7D7D7D;
 }
 
+.regex h2 {
+    font-family: 'Raleway', sans-serif;
+    color: #2E2E2E;
+}
+
 .regex form{
     display: flex;
     flex-direction: column;
