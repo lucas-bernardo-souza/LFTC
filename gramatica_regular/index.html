@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tabela-gramatica">
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th>LHS</th>
+                    <th>RHS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" onfocus="verificarUltimaLinha(this)"></td>
+                    <td><input type="text" onfocus="verificarUltimaLinha(this)"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="botao-enviar" type="button">Gerar Gramática</button>
+    </div>
+    <div class="entrada">
+        <p>Cadeia (Input): <input id="cadeia" type="text"> <button id="capturar-cadeia" type="button">Testar</button> </p>
+        
+    </div>
+    <div class="descricao-gramatica">
+        <h2>Gramática = (V,T,P,S)</h2>
+        <p>V= <input id="variaveis" type="text" disabled> </p>
+        <p>T= <input id="terminais" type="text" disabled> </p>
+    </div>
+    <script src="./script.js" type="module" defer></script>
+</body>
+</html>
