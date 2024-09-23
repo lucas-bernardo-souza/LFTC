@@ -14,7 +14,7 @@ document.getElementById('botao-enviar').addEventListener('click', function() {
 });
 
 document.getElementById('capturar-cadeia').addEventListener('click', function(){
-    let inputCadeia = document.getElementById('cadeia').innerText;
+    let inputCadeia = document.getElementById('cadeia').value;
     console.log(validarCadeia(automato, inputCadeia));
 });
 

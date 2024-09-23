@@ -41,7 +41,7 @@ function converterParaAutomato(gramatica){
             } else {
                 // Se não há próximo estado, o próximo estado é final
                 automato.transicoes[lhs][simbolo] = 'final';
-                automato.estadosFinais.push('final');
+                automato.estadosFinais.push(lhs);
             }
         }
     }
