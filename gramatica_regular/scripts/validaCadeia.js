@@ -10,7 +10,7 @@ function validarCadeia(automato, cadeia){
         estadoAtual = proximoEstado;
     }
 
-    return automato.estadosFinais.has(estadoAtual);
+    return automato.estadosFinais.includes(estadoAtual);
 }
 
 export {validarCadeia};

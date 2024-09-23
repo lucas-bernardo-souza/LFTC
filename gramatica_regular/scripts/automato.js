@@ -1,10 +1,11 @@
 const automato = {
-    estados: new Set(),
+    estados: [],
     transicoes: {},
     estadoInicial: '',
-    estadosFinais: new Set()
+    estadosFinais: []
 };
 
+// A gramática que é recebida como parâmetro deve ser um objeto
 function converterParaAutomato(gramatica){
     const lhsKeys = Object.keys(gramatica);
     automato.estadoInicial = lhsKeys[0];  // O estado inicial é o primeiro LHS
@@ -18,10 +19,16 @@ function converterParaAutomato(gramatica){
         const rhsProducoes = gramatica[lhs];
         for (let j = 0; j < rhsProducoes.length; j++) {
             const producao = rhsProducoes[j];
+            // A gramática deve ser linear a direita
             const simbolo = producao[0];  // O primeiro símbolo é o terminal
 
             // Verifica se a produção leva a um estado (não-terminal)
-            const proximoEstado = producao.length > 1 ? producao[1] : null;
+            let proximoEstado;
+            if(producao.length > 1){
+                proximoEstado = producao[1];
+            } else {
+                proximoEstado = null;
+            }
             
             // Inicializa a tabela de transições para o estado atual (lhs)
             if (!automato.transicoes[lhs]) {
@@ -39,7 +46,6 @@ function converterParaAutomato(gramatica){
         }
     }
 
-    automato.estados.add(automato.estadoInicial);
     return automato;
 }
 

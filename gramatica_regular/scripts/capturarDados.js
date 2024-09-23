@@ -5,9 +5,9 @@ function criarGramatica(tabela){
 
     for(let i = 0; i < linhas.length; i++){
         let colunas = linhas[i].getElementsByTagName('td');
-
+        // LHS são os não terminais
         let lhs = colunas[0].getElementsByTagName('input')[0].value.trim();
-
+        
         let rhs = colunas[1].getElementsByTagName('input')[0].value.split('|').map(regra => regra.trim());
         gramatica[lhs] = rhs;
     }
