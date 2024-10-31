@@ -5,17 +5,40 @@ import { validarCadeia } from "./scripts/validaCadeia.js";
 let gramatica;
 let automato;
 
-document.getElementById('botao-enviar').addEventListener('click', function() {
+document.getElementById('gerar-gramatica').addEventListener('click', function() {
     const tabela = document.getElementById('tabela').getElementsByTagName('tbody')[0];
     gramatica = criarGramatica(tabela);
     automato = converterParaAutomato(gramatica);
-    console.log(gramatica);
-    console.log(automato);
+    const variaveis = document.getElementById('variaveis');
+    const terminais = document.getElementById('terminais');
+
+    variaveis.value = '';
+    terminais.value = '';
+
+    variaveis.value = automato.estados;
+
+    Object.keys(automato.transicoes).forEach(transicao => {
+        const chaves = Object.keys(automato.transicoes[transicao]);
+        if (transicao !== '')
+            terminais.value += chaves + ' , ';
+        
+    })
+
+    //console.log(gramatica);
+    //console.log(automato);
 });
 
 document.getElementById('capturar-cadeia').addEventListener('click', function(){
-    let inputCadeia = document.getElementById('cadeia').value;
-    console.log(validarCadeia(automato, inputCadeia));
+    let input = document.getElementById('cadeia');
+    let cadeia = input.value;
+    console.log(validarCadeia(automato, cadeia));
+    if(validarCadeia(automato, cadeia)){
+        input.classList.remove('invalido');
+        input.classList.add('valido');
+    } else {
+        input.classList.remove('valido');
+        input.classList.add('invalido');
+    }
 });
 
 window.verificarUltimaLinha = function(input) {

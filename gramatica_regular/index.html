@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="tabela-gramatica">
+        <h1>A gramática digitada deve ser linear a direita</h1>
         <table id="tabela">
             <thead>
                 <tr>
@@ -21,16 +23,21 @@
                 </tr>
             </tbody>
         </table>
-        <button id="botao-enviar" type="button">Gerar Gramática</button>
+        <button id="gerar-gramatica" type="button">Gerar Gramática</button>
     </div>
     <div class="entrada">
-        <p>Cadeia (Input): <input id="cadeia" type="text"> <button id="capturar-cadeia" type="button">Testar</button> </p>
-        
+        <p>Cadeia (Input): </p> 
+        <input id="cadeia" type="text"> 
+        <button id="capturar-cadeia" type="button">Testar</button> </p>
     </div>
     <div class="descricao-gramatica">
         <h2>Gramática = (V,T,P,S)</h2>
-        <p>V= <input id="variaveis" type="text" disabled> </p>
-        <p>T= <input id="terminais" type="text" disabled> </p>
+        <div class="v-t">
+            <p>V= </p>
+            <input id="variaveis" type="text" disabled>
+            <p>T= </p>
+            <input id="terminais" type="text" disabled>
+        </div>
     </div>
     <script src="./script.js" type="module" defer></script>
 </body>
