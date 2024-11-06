@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatos Finitos</title>
+</head>
+<body>
+    <h1>Criar Automato</h1>
+    <div class="estados">
+        <label for="state">Estado:</label>
+        <input type="text" id="state" placeholder="Nome do estado">
+        <button id="adicionar-estado">Adicionar Estado</button>
+    </div>
+    <div class="transicao">
+        <label for="transition">Transição:</label>
+        <input type="text" id="fromState" placeholder="De estado">
+        <input type="text" id="toState" placeholder="Para estado">
+        <input type="text" id="symbol" placeholder="Símbolo">
+        <button onclick="addTransition()">Adicionar Transição</button>
+    </div>
+    <h2>Autômato Criado:</h2>
+    <div id="container"></div>
+    <script src="script.js" type="module" defer></script>
+</body>
+</html>
