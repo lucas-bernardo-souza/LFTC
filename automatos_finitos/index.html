@@ -17,10 +17,22 @@
         <input type="text" id="fromState" placeholder="De estado">
         <input type="text" id="toState" placeholder="Para estado">
         <input type="text" id="symbol" placeholder="Símbolo">
-        <button onclick="addTransition()">Adicionar Transição</button>
+        <button id="adicionar-transicao">Adicionar Transição</button>
+    </div>
+    <div class="atributos">
+        <label for="start">Estado Inicial:</label>
+        <select id="initialState"></select>
+        <label for="end">Estados Finais:</label>
+        <select id="finalState" multiple size="2"></select>
+        <button id="adicionar-props">Adicionar</button>
+    </div>
+    <div>
+        <label for="characters">Cadeia:</label>
+        <input type="text" id="characters" placeholder="Cadeia de teste">
+        <button id="test-chain">Testar Cadeia</button>
     </div>
     <h2>Autômato Criado:</h2>
     <div id="container"></div>
-    <script src="script.js" type="module" defer></script>
+    <script src="index.js"></script>
 </body>
 </html>
