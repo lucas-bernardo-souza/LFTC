@@ -6,6 +6,8 @@ html, body {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    background-color: #B3B3B3;
+    font-family:'Raleway', sans-serif;
 }
 .tabela-gramatica{
     width: 85%;
